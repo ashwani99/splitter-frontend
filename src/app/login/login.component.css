@@ -1,0 +1,22 @@
+.nav-container {
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    box-shadow: 0 5px 15px 0 rgba(46,61,73,.12);
+}
+
+.nav-container h4 {
+    color: #6654FB;
+}
+
+.main-container {
+    display: flex;
+    flex-flow: column;
+    padding: 1.8em;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+}

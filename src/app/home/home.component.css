@@ -1,0 +1,45 @@
+* {
+    font-family: Georgia, serif;
+}
+
+.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #6654FB;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+.main p {
+    font-size: 1.1rem;
+    color: white;
+}
+
+.main button {
+    font-size: 1.3rem;
+    background: #6654FB;
+    border: 3px white solid;
+    border-radius: 0.5rem;
+    color: white;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: background 250ms, color 250ms;
+}
+
+.main button:hover {
+    background: white;
+    color: #6654FB;
+}

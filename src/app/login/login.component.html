@@ -1,0 +1,45 @@
+<nav>
+    <div class="nav-container">
+        <h4 routerLink="">Splitter</h4>
+    </div>
+</nav>
+
+<section class="main-container">
+    <ngb-tabset justify="fill">
+        <ngb-tab title="Sign In">
+            <ng-template ngbTabContent>
+                <form>
+                    <div class="form-group">
+                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary" routerLink='/dashboard'>Sign In</button>
+                  </form>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Sign Up">
+            <ng-template ngbTabContent>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter username of your choice">
+                        <!-- <small id="usernameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password1" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password2" placeholder="Re-enter password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create account</button>
+                </form>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
+</section>
