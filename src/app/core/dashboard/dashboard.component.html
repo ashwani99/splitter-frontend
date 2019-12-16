@@ -1,0 +1,31 @@
+<app-nav title="Splitter"></app-nav>
+
+<section class="container">
+    <router-outlet></router-outlet>
+
+    <div class="search-box">
+        <input placeholder="Search for a friend or group" type="text" autocomplete="off">
+        <span class="input-icon mu mu-search"></span>
+    </div>
+
+    <ngb-tabset justify="fill">
+        <ngb-tab>
+            <ng-template ngbTabTitle>
+                <div class="plus-header-info">
+                    <h1>$70.34</h1>
+                    <p>I GET BACK</p>
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab>
+            <ng-template ngbTabTitle>
+                <div class="minus-header-info">
+                    <h1>$70.34</h1>
+                    <p>I AM OWED</p>
+                </div>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
+</section>
+
+<button class="floating-button"><span class="mu mu-white mu-plus"></span></button>

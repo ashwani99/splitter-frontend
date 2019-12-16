@@ -1,9 +1,35 @@
 @import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
+@import "../node_modules/microns/fonts/microns.css";
 
-body, label {
-    color: #6654FB;
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+:root {
+    --app-primary-color: #6353ef;
+    --app-info-color: #212d5c;
+    --app-success-color: #539380;
+    --app-warning-color: #d08348;
+    --app-danger-color: #f44336;
+    --app-grey-default: #999999;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 1.5em;
+    height: calc(100% - 74px);
 }
 
 .btn-primary {
-    background: #6654FB;
+    background: var(--app-primary-color);
 }
+
+.mu {
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+.mu-white {
+    color: white;
+}
+

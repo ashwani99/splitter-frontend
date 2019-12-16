@@ -1,15 +1,13 @@
-* {
-    font-family: Georgia, serif;
+.content {
+    background: var(--app-info-color);
+    height: 100vh;
+    width: 100%;
+    margin: 0;
 }
 
 .main {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #6654FB;
     height: 100%;
     width: 100%;
-    margin: 0;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -17,29 +15,67 @@
 }
 
 .main h1 {
-    font-size: 2.5rem;
-    letter-spacing: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.4rem;
     text-transform: uppercase;
     color: white;
 }
 
 .main p {
+    text-align: center;
     font-size: 1.1rem;
     color: white;
 }
 
 .main button {
-    font-size: 1.3rem;
-    background: #6654FB;
+    margin-top: 5%;
+    width: 90%;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    background: white;
     border: 3px white solid;
-    border-radius: 0.5rem;
-    color: white;
+    color: var(--app-primary-color);
     padding: 1rem 1.5rem;
     cursor: pointer;
-    transition: background 250ms, color 250ms;
+    /* transition: background 250ms, color 250ms; */
 }
 
-.main button:hover {
-    background: white;
-    color: #6654FB;
+@media screen and (min-width: 550px) {
+    .main h1 {
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+    }
+
+    .main p {
+        font-size: 1.3rem;
+    }
+
+    .main button {
+        width: 70%;
+        padding: 2% 0;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .main h1 {
+        font-size: 4rem;
+        letter-spacing: 0.6rem;
+    }
+
+    .main p {
+        font-size: 1.5rem;
+    }
+
+    .main button {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .main {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

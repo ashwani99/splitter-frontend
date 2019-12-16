@@ -1,43 +1,67 @@
-<nav>
-    <div class="nav-container">
-        <h4 routerLink="">Splitter</h4>
-    </div>
-</nav>
+<app-nav title="Splitter"></app-nav>
 
-<section class="main-container">
-    <ngb-tabset justify="fill">
-        <ngb-tab title="Sign In">
+<section class="container col-lg-6 col-md-10 col-sm-11">
+    <div *ngIf="invalidLogin" class="alert alert-danger" role="alert">{{ invalidLoginMsg }}</div>
+    <div *ngIf="flashMsg" class="alert alert-success">{{ flashMsg }}</div>
+    <ngb-tabset justify="fill" #tabs>
+        <ngb-tab title="Sign In" id="signInTab">
             <ng-template ngbTabContent>
-                <form>
-                    <div class="form-group">
-                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <h4>Sign in to your account</h4>
+                <form #f="ngForm" (ngSubmit)="signIn(f.value)">   
+                    <div class="form-group">    
+                        <input type="email" class="form-control" id="email" name="email" #email="ngModel" ngModel aria-describedby="emailHelp" placeholder="Enter email" email required>
+                        <div class="alert alert-danger" *ngIf="email.invalid && (email.touched || email.dirty)">
+                            <div *ngIf="email.errors.required">Email cannnot be empty</div>
+                            <div *ngIf="email.errors.email">Please enter a valid email</div>
+                        </div>
+                        <small *ngIf="email.touched" id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control" id="password" placeholder="Password">
+                        <input required type="password" class="form-control" id="password" name="password" ngModel placeholder="Password" #password="ngModel">
+                        <div class="alert alert-danger" *ngIf="password.invalid && (password.touched || password.dirty)">
+                            <div *ngIf="password.errors.required">Password cannnot be empty</div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary" routerLink='/dashboard'>Sign In</button>
-                  </form>
+                    <!-- <div class="form-group form-check">
+                        <input required type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe" ngModel checked>
+                        <label class="form-check-label" for="rememberMe">Remember me?</label>
+                    </div> -->
+                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Sign In</button>
+                </form>
             </ng-template>
         </ngb-tab>
-        <ngb-tab title="Sign Up">
+
+        <ngb-tab title="Sign Up" id="signUpTab">
             <ng-template ngbTabContent>
-                <form>
+                <h4>Create your splitter account</h4>
+                <form #f="ngForm" (ngSubmit)="registerAccount(f.value, tabs)" [mustMatch]="['password', 'confirmpassword']">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter username of your choice">
-                        <!-- <small id="usernameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter username of your choice" ngModel required #username="ngModel">
+                        <div class="alert alert-danger" *ngIf="username.invalid && (username.touched || username.dirty)">
+                            <div *ngIf="username.errors.required">Username cannnot be empty</div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter your email" ngModel required email #email="ngModel">
                         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        <div class="alert alert-danger" *ngIf="email.invalid && (email.touched || email.dirty)">
+                            <div *ngIf="email.errors.required">Email cannnot be empty</div>
+                            <div *ngIf="email.errors.email">Please enter a valid email</div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password1" placeholder="Password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" ngModel required #password="ngModel">
+                        <div class="alert alert-danger" *ngIf="password.invalid && (password.touched || password.dirty)">
+                            <div *ngIf="password.errors.required">Password cannnot be empty</div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password2" placeholder="Re-enter password">
+                        <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm password" ngModel required #confirmpassword="ngModel">
+                        <div class="alert alert-danger" *ngIf="confirmpassword.invalid && (confirmpassword.touched || confirmpassword.dirty)">
+                            <div *ngIf="confirmpassword.errors.mustMatch">Passwords must match</div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Create account</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Create account</button>
                 </form>
             </ng-template>
         </ngb-tab>

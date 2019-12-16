@@ -1,0 +1,85 @@
+.nav-container {
+    /* position: relative; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr repeat(3, auto) 1fr;
+    align-items: center;
+    padding: 1.2rem;
+    box-shadow: 0 5px 15px 0 rgba(46,61,73,.12);
+    z-index: 20;
+    background-color: var(--app-primary-color);
+}
+
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+}
+
+.nav-container {
+    color: #eee;
+}
+
+.nav-container h4 {
+    letter-spacing: 0.3rem;
+}
+
+.mu-menu, .mu-bars {
+    cursor: pointer;
+    font-size: 2rem;
+    transition: transform 0.5s;
+}
+
+.sidenav {
+    position: absolute;
+    left: -330px;
+    top: 0;
+    z-index: 15;
+    height: 100%;
+    width: 330px;
+    background: var(--app-info-color);
+    color: white;
+    padding: 90px 15px 15px;
+    transition: transform 0.5s ease-out;
+}
+
+.sidenav-active {
+    transform: translateX(330px);
+}
+
+
+.sidenav .profile-info {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.sidenav .profile-info img {
+    border-radius: 50%;
+    /* margin-right: 10px; */
+}
+
+.sidenav .profile-info h5 {
+    font-weight: 700;
+}
+
+.sidenav ul {
+    padding: 15px;
+    list-style-type: none;
+}
+
+.sidenav ul li {
+    font-size: 1.2rem;
+    padding: 1.2rem 0;
+    cursor: pointer;
+    color: var(--app-grey-default);
+}
+
+.sidenav ul li:hover {
+    color: white;
+}
+
+.sidenav ul li .mu {
+    margin-right: 10px;
+}

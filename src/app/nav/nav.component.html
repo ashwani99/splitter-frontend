@@ -1,0 +1,29 @@
+<nav class="nav-container navbar-fixed">
+    <div>
+        <span
+        *ngIf="authService.isLoggedIn | async" 
+        (click)="toggleSidenav()" 
+        class="mu mu-white" 
+        [class.mu-menu]="!sidenavActive" 
+        [class.mu-bars]="sidenavActive"></span>
+    </div>
+    <h4 *ngIf="authService.isLoggedIn | async" routerLink="/app">{{ title | uppercase }}</h4>
+    <h4 *ngIf="!(authService.isLoggedIn | async)" routerLink="/">{{ title | uppercase }}</h4>
+</nav>
+
+<div *ngIf="authService.isLoggedIn | async" class="sidenav" [class.sidenav-active]="sidenavActive">
+    <div class="profile-info">
+        <img src="https://via.placeholder.com/80" alt="profile picture">
+        <div class="profile-details">
+            <h5>Andrew Smith</h5>
+            <small>ashdrewsmith@example.com</small>
+        </div>
+    </div>
+
+    <ul>
+        <li><span class="mu mu-chart-bar"></span>Dashboard</li>
+        <li><span class="mu mu-heart"></span>Notifications</li>
+        <li><span class="mu mu-cog"></span>Settings</li>
+        <li (click)="logout()"><span class="mu mu-warn"></span>Logout</li>
+    </ul>
+</div>

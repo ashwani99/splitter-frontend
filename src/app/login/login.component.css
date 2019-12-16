@@ -1,22 +1,71 @@
-.nav-container {
-    width: 100%;
-    text-align: center;
-    padding: 1em;
-    box-shadow: 0 5px 15px 0 rgba(46,61,73,.12);
-}
-
-.nav-container h4 {
-    color: #6654FB;
-}
-
-.main-container {
-    display: flex;
-    flex-flow: column;
-    padding: 1.8em;
+.container {
+    height: 100%;
+    margin-top: 76px;
+    padding-top: 5%;
 }
 
 form {
+    height: 100%;
     display: flex;
     flex-flow: column;
-    align-items: stretch;
+    font-size: 1.4rem;
+    justify-content: space-evenly;
+}
+
+.form-check {
+    text-align: left;
+}
+
+.form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.form-check-label {
+    margin-left: 10px;
+}
+
+#emailHelp {
+    font-size: 1rem;
+}
+
+form input {
+    padding: 3%;
+}
+
+.btn {
+    padding: 2% 0;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    background: var(--app-primary-color);
+}
+
+.alert-danger .mu {
+    color: #894f65;
+}
+
+:host ::ng-deep .tab-content {
+    min-height: 30%;
+}
+
+:host ::ng-deep .tab-pane {
+    text-align: center;
+    height: 100%;
+}
+
+:host ::ng-deep .tab-pane h4 {
+    margin-top: 20px;
+    color: gray;
+}
+
+:host ::ng-deep .nav-link {
+    color: var(--app-grey-default);
+    padding: 4% 0;
+    font-size: 1.2rem;
+}
+
+:host ::ng-deep .nav-item .active {
+    background-color: var(--app-primary-color);
+    color: white;
+    font-weight: 700;
 }

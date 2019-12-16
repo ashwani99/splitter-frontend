@@ -1,0 +1,8 @@
+<div class="bill">
+    <img class="bill-image" src="https://via.placeholder.com/75" alt="">
+    <div>
+        <h5 class="bill-title">{{ bill.title }}</h5>
+        <p class="bill-date"><span class="mu mu-clock"></span>{{ bill.created_at | date }}</p>
+    </div>
+    <div class="bill-amount">{{ bill.amount | currency: 'INR' }}</div>
+</div>
